@@ -5,7 +5,7 @@ import Navbar from '@/app/components/Navbar';
 import CookingSteps from '@/app/components/CookingSteps';
 
 const CookDish = ({ params }) => {
-  const { dish_name } = params;
+  const { id } = params;
   const [timer, setTimer] = useState(120);
   const [dishName, setDishName] = useState('');
   const [isRunning, setIsRunning] = useState(false);
@@ -16,8 +16,8 @@ const CookDish = ({ params }) => {
     const removeSpaces = (dishName) => {
       return dishName.replace(/%20/g, ' ');
     };
-    setDishName(removeSpaces(dish_name));
-  }, [dish_name]);
+    setDishName(removeSpaces(id));
+  }, [id]);
 
 
 
