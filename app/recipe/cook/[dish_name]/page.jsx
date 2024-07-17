@@ -5,7 +5,7 @@ import Navbar from '@/app/components/Navbar';
 import CookingSteps from '@/app/components/CookingSteps';
 
 const CookDish = ({ params }) => {
-  const { id } = params;
+  const { dish_name } = params;
   const [timer, setTimer] = useState(120);
   const [dishName, setDishName] = useState('');
   const [isRunning, setIsRunning] = useState(false);
@@ -16,8 +16,8 @@ const CookDish = ({ params }) => {
     const removeSpaces = (dishName) => {
       return dishName.replace(/%20/g, ' ');
     };
-    setDishName(removeSpaces(id));
-  }, [id]);
+    setDishName(removeSpaces(dish_name));
+  }, [dish_name]);
 
 
 
@@ -80,7 +80,7 @@ const CookDish = ({ params }) => {
       <div className='flex'>
         <div className="flex flex-col items-center justify-center p-4">
           <h1 className="text-4xl font-bold mb-4">{dishName}</h1>
-          <div className="bg-white p-6 rounded-lg shadow-md max-w-md">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md">
             <h2 className="text-xl font-semibold mb-2">Steps to cook {dishName}</h2>
             <ol className="list-decimal list-inside">
               <li>Step 1: Prepare all the ingredients.</li>
@@ -117,3 +117,4 @@ const CookDish = ({ params }) => {
 };
 
 
+export default CookDish;
