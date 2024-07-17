@@ -5,6 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link';
 import Navbar from '@/app/components/Navbar';
 
+export async function generateStaticParams(){}
+
+
 const RecipePage = ({params}) => {
 
     const { id } = params
