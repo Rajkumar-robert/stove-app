@@ -116,4 +116,4 @@ const CookDish = ({ params }) => {
   );
 };
 
-export default CookDish;
+
