@@ -8,7 +8,7 @@ const Recipegrid = () => {
   
 
     return (
-        <div className="grid grid-cols-4 gap-4 mt-10 px-10">
+        <div className="grid grid-cols-4 gap-4 px-10">
             {dish.map((item, index) => (
                 <div className="rounded-lg shadow-lg" key={index}>
                     <div className='h-60 '>
@@ -20,9 +20,9 @@ const Recipegrid = () => {
                             <p className='text-ellipsis font-semibold w-48'>{item.dishName}</p>
                             <p>{item.price}</p>
                         </div>
-                        <div>
-                            <Link href={`/recipe/${item.dishName}`} className='font-semibold text-sm bg-blue-500 text-white py-2 px-3 rounded-lg'>Order Now</Link>
-                        </div>
+                        
+                            <Link href={`/recipe/${item.dishName}`} className='font-semibold text-sm bg-blue-500 text-white py-2 px-3 rounded-lg w-48 flex items-center justify-center'><p>Order now</p></Link>
+        
                     </div>
 
                 </div>
