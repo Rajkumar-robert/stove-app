@@ -1,0 +1,11 @@
+import Navbar from "@/components/Navbar";
+import RecipePage from "./[id]";
+
+export default function MyApp(){ 
+    return (
+        <>
+        <Navbar/>
+        <RecipePage />
+        </>
+    );
+}
