@@ -34,7 +34,7 @@ const CookingSteps = () => {
 
     const sendCurrentStep = async (step) => {
         try {
-            await axios.get(`http://127.0.0.1:5000/recipes/next_step/${step}`);
+            await fetch(`http://127.0.0.1:5000/recipes/next_step/${step}`);
             console.log(`Step ${step} sent to server`);
         } catch (error) {
             console.error('Error sending current step:', error);
