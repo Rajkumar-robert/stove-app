@@ -9,3 +9,14 @@ export default function MyApp(){
         </>
     );
 }
+
+
+
+ // <div className="grid grid-cols-3 gap-4 p-4">
+        //     {steps.map((step, index) => (
+        //         <div key={index} className="p-2 shadow-md rounded-lg">
+        //             <Image width={300} height={300} src={step.image} alt={`Step ${step.count}`} className='rounded-md' />
+        //             <p>Step {index +1}</p>
+        //         </div>
+        //     ))}
+        // </div>

@@ -77,8 +77,9 @@ const CookDish = ({ params }) => {
   return (
     <>
       <Navbar />
-      <div className='flex'>
-        <div className="flex flex-col items-center justify-center p-4">
+      <div className='bg-banana '>
+      <div className='bg-[#ffffffcc] flex py-2'>
+        <div className=" flex flex-col items-center justify-center p-4">
           <h1 className="text-4xl font-bold mb-4">{dishName}</h1>
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md">
             <h2 className="text-xl font-semibold mb-2">Steps to cook {dishName}</h2>
@@ -111,6 +112,8 @@ const CookDish = ({ params }) => {
         </div>
         <CookingSteps />
       </div>
+      </div>
+      
 
     </>
   );
