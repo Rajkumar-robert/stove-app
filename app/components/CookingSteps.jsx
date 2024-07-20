@@ -67,8 +67,8 @@ function CookingSteps({recipe}) {
       setCurrentStep(newStep);
       socket.emit('currentStep', { step: recipe_process_dict["Fried Rice"][newStep] });
 
-      if (recipe_process_dict["Fried Rice"][newStep].startsWith("m")) {
-        console.log("starts with M ", recipe_process_dict["Fried Rice"][newStep].startsWith("m"), recipe_process_dict["Fried Rice"][newStep]);
+      if (recipe_process_dict["Fried Rice"][currentStep].startsWith("m")) {
+        console.log("starts with M ", recipe_process_dict["Fried Rice"][currentStep].startsWith("m"), recipe_process_dict["Fried Rice"][newStep]);
         setIsPrevDisabled(true);
       } else {
         setIsPrevDisabled(false);
