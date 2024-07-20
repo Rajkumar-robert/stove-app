@@ -44,7 +44,13 @@ const Recipegrid = () => {
                         </div>
 
                         <Link
-                            href={`/recipe/${item.name}`}
+                            href={{
+                                pathname:'/recipe',
+                                query:{
+                                    recipe: item.name,
+                                    id: item.id
+                                },
+                            }}
                             className="font-semibold text-sm bg-blue-500 text-white py-2 px-3 rounded-lg w-48 flex items-center justify-center"
                         >
                             <p>Order now</p>

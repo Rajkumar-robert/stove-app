@@ -14,7 +14,9 @@
     "rc-progress": "^4.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-line-progress": "^1.0.3"
+    "react-line-progress": "^1.0.3",
+    "react-use-websocket": "^4.8.1",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "eslint": "^8",

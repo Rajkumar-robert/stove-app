@@ -4,20 +4,24 @@ import { Circle, Line } from 'rc-progress';
 import Navbar from '@/app/components/Navbar';
 import CookingSteps from '@/app/components/CookingSteps';
 
-const CookDish = ({ params }) => {
-  const { dish_name } = params;
+const CookDish = ({ searchParams }) => {
+  const { recipe } = searchParams;
   const [timer, setTimer] = useState(120);
   const [dishName, setDishName] = useState('');
   const [isRunning, setIsRunning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
+  console.log(recipe);  
+  
 
   useEffect(() => {
-    const removeSpaces = (dishName) => {
-      return dishName.replace(/%20/g, ' ');
+    const removeSpaces =(dishName) => {
+      if (dishName)
+       {let  recipeName = dishName.replace(/%20/g, ' ');
+        setDishName(recipeName);}
     };
-    setDishName(removeSpaces(dish_name));
-  }, [dish_name]);
+    removeSpaces(recipe)
+  }, [recipe]);
 
 
 
@@ -78,8 +82,8 @@ const CookDish = ({ params }) => {
     <>
       <Navbar />
       <div className='bg-banana '>
-      <div className='bg-[#ffffffcc] flex py-2'>
-        <div className=" flex flex-col items-center justify-center p-4">
+      <div className='bg-[#ffffffcc] flex py-2 justify-center'>
+        {/* <div className=" flex flex-col items-center justify-center p-4">
           <h1 className="text-4xl font-bold mb-4">{dishName}</h1>
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md">
             <h2 className="text-xl font-semibold mb-2">Steps to cook {dishName}</h2>
@@ -109,7 +113,7 @@ const CookDish = ({ params }) => {
               <button onClick={handleStop} className='bg-blue-500 text-white rounded-md shadow-md w-28 px-5 py-2'>Stop</button>
             </div>
           </div>
-        </div>
+        </div> */}
         <CookingSteps />
       </div>
       </div>
