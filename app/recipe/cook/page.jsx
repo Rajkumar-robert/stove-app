@@ -114,7 +114,7 @@ const CookDish = ({ searchParams }) => {
             </div>
           </div>
         </div> */}
-        <CookingSteps />
+        <CookingSteps recipe={dishName}/>
       </div>
       </div>
       

@@ -22,9 +22,9 @@ const RecipePage = ({searchParams}) => {
         const fetchData = async () => {
             try {
                 const formattedId = id.replace(/%20/g, ' ');
-                cons
-                // const response = await fetch(`http://127.0.0.1:5000/recipes/${formattedId}`);
-                // const dishData = await response.json();
+                
+                    const response = await fetch(`http://127.0.0.1:5000/recipes/${formattedId}`);
+                    const dishData = await response.json();
                 setRecipeData(dishData);
             } catch (error) {
                 console.error('Error fetching recipe data:', error);

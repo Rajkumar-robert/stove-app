@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 
 const socket = io('ws://localhost:5000');
 
-function CookingSteps() {
+function CookingSteps({recipe}) {
   const recipe_process_dict = {
     "Fried Rice": [
       'home-1',
@@ -51,6 +51,7 @@ function CookingSteps() {
   const handleStart = () => {
     setIsStarted(true);
     socket.emit('currentStep', { step: recipe_process_dict["Fried Rice"][currentStep] });
+    socket.emit('currentRecipe',{recipe:recipe});
   }
 
   const handlePrev = () => {
@@ -79,6 +80,7 @@ function CookingSteps() {
     <div className='flex flex-col justify-center items-center rounded-md shadow-md p-4 bg-white'>
       <h1 className='text-3xl font-bold'>Cooking Steps</h1>
       <p>{message}</p>
+      <p>{recipe}</p>
       <p>{recipe_process_dict["Fried Rice"][currentStep]}</p>
       <div>
         <Image width={700} height={700} src='/steps/cooking.jpg' alt='' className='rounded-md' />
